@@ -142,9 +142,7 @@ body {
 // Colours
 @primaryColor: #eae7dc;
 @mainAccentColor: #e85a4f;
-@accentColorBrown: #d8c3a5;
-@accentColorPink: #e98074;
-@accentColorGrey: #8e8d8a;
+@secondaryAccentColor:#8e8d8a;
 @white: white;
 @black: black;
 
@@ -201,16 +199,19 @@ body {
     color: @black;
   }
 
-  h2,
-  h3 {
+  h2 {
     font-size: @subHeaderFontSize;
     color: @black;
   }
 
+  h3 {
+    font-size: @subHeaderFontSize -1rem;
+    text-decoration: underline;
+  }
+
   hr {
-    color: @black;
     width: 70%;
-    border-top: 0.1rem solid black;
+    border-top: 0.1rem solid @black;
   }
 
   // Header
@@ -220,7 +221,7 @@ body {
     line-height: 1.5;
 
     h2 {
-      color: @accentColorGrey;
+      color: @secondaryAccentColor;
     }
   }
 
@@ -274,7 +275,7 @@ body {
     &.skills {
       .flex-center-even(column);
       width: 100%;
-      ul{
+      ul {
         width: 100%;
         li {
           list-style-type: disc;
@@ -282,7 +283,6 @@ body {
           line-height: 3rem;
         }
       }
-
 
       .skills-container {
         position: relative;
@@ -313,7 +313,7 @@ body {
           width: 60%;
           height: 80%;
           top: 12%;
-          left: 10%;
+          left: 5%;
         }
       }
 
@@ -346,27 +346,30 @@ body {
     // Work History
 
     &.work {
-      background-color: @white;
+      .flex-center-even(column);
 
-      h2 {
-        color: @mainAccentColor;
-      }
+      .work-item-container {
+        .flex-center-even(column);
+        width: 100%;
 
-      table {
-        padding: 1rem;
-        margin: 2rem 0;
-        border: 0.2rem solid @black;
+        hr {
+          border-top: 0.07rem solid @mainAccentColor;
+        }
 
-        tr {
-          background-color: @white;
+        .work-item {
+          .flex-center-even(column);
+          width: 100%;
           padding: 1rem;
+          margin-bottom: 1rem;
+          text-align: center;
 
-          &:nth-child(1) {
-            font-weight: bold;
-          }
+          h3,
+          p {
+            line-height: 2rem;
 
-          &:nth-child(even) {
-            background-color: @accentColorBrown;
+            &.job-title {
+              font-weight: bold;
+            }
           }
         }
       }
