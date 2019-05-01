@@ -157,13 +157,18 @@ body {
   font-family: "Libre Baskerville", serif;
 }
 .container h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: black;
 }
 .container h2,
 .container h3 {
   font-size: 2rem;
   color: black;
+}
+.container hr {
+  color: black;
+  width: 70%;
+  border-top: 0.1rem solid black;
 }
 .container header {
   margin: 2rem;
@@ -183,6 +188,7 @@ body {
   margin-bottom: 1rem;
   width: 80%;
   background-color: #e85a4f;
+  z-index: 4;
 }
 @media (max-width: 500px) {
   .container nav {
@@ -220,35 +226,75 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
 }
-.container section.skills li {
+.container section.skills ul {
+  width: 100%;
+}
+.container section.skills ul li {
   list-style-type: disc;
-  line-height: 2rem;
+  list-style-position: inside;
+  line-height: 3rem;
 }
 .container section.skills .skills-container {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 50vh;
+}
+.container section.skills .skills-container .s-skills-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: column;
-  padding: 4.5rem 3rem;
+  padding: 4.5rem 2rem;
   background-color: #e85a4f;
   color: white;
   border: 0.3rem dashed black;
-  border-right: none;
+  position: absolute;
+  z-index: 2;
+  left: 35%;
+  top: 30%;
+  width: 60%;
+  height: 80%;
 }
-.container section.skills .skills-container h2 {
-  color: white;
-}
-.container section.skills .tech-container {
+.container section.skills .skills-container .tech-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: column;
-  padding: 4.5rem 3rem;
+  padding: 4.5rem 2rem;
   background-color: white;
   border: 0.3rem solid black;
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  top: 12%;
+  left: 10%;
+}
+@media (max-width: 500px) {
+  .container section.skills li {
+    line-height: 1.5rem;
+  }
+  .container section.skills .skills-container {
+    position: static;
+    height: auto;
+    margin-top: 2rem;
+  }
+  .container section.skills .skills-container .s-skills-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-bottom: none;
+    padding: 2rem;
+  }
+  .container section.skills .skills-container .tech-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
 }
 .container section.work {
   background-color: white;
@@ -293,6 +339,11 @@ body {
   justify-content: center;
   padding: 1rem 3rem;
   width: 100%;
+}
+@media (max-width: 500px) {
+  .container section.contact form div {
+    padding: 1rem;
+  }
 }
 .container section.contact form div:last-child {
   margin-bottom: 2.5rem;

@@ -154,7 +154,7 @@ body {
 
 // Font Sizes
 @bodyFontSize: 1.5rem;
-@mainHeaderFontSize: 4rem;
+@mainHeaderFontSize: 3.5rem;
 @subHeaderFontSize: 2rem;
 
 // Media Breakpoints
@@ -165,6 +165,13 @@ body {
 .flex-center-even(@flexDirection) {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  flex-direction: @flexDirection;
+}
+
+.flex-start-even(@flexDirection) {
+  display: flex;
+  align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: @flexDirection;
 }
@@ -200,6 +207,12 @@ body {
     color: @black;
   }
 
+  hr {
+    color: @black;
+    width: 70%;
+    border-top: 0.1rem solid black;
+  }
+
   // Header
   header {
     margin: 2rem;
@@ -213,12 +226,13 @@ body {
 
   // Nav
   nav {
-	position: sticky;
-	top: 0;
+    position: sticky;
+    top: 0;
     .flex-center-even(row);
     margin-bottom: 1rem;
     width: 80%;
     background-color: @mainAccentColor;
+    z-index: 4;
 
     @media (max-width: @mobileBreakpoint) {
       width: 100%;
@@ -237,8 +251,8 @@ body {
 
   // Sections
   section {
-	padding: 2rem;
-	margin-bottom: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
 
     // Introduction
 
@@ -258,32 +272,74 @@ body {
     // Skills & Technologies
 
     &.skills {
-      .flex-center-even(row);
+      .flex-center-even(column);
       width: 100%;
-
-      li {
-        list-style-type: disc;
-        line-height: 2rem;
-      }
-
-      .skills-container {
-        .flex-center-even(column);
-        padding: 4.5rem 3rem;
-        background-color: @mainAccentColor;
-        color: @white;
-        border: 0.3rem dashed @black;
-        border-right: none;
-
-        h2 {
-          color: @white;
+      ul{
+        width: 100%;
+        li {
+          list-style-type: disc;
+          list-style-position: inside;
+          line-height: 3rem;
         }
       }
 
-      .tech-container {
-        .flex-center-even(column);
-        padding: 4.5rem 3rem;
-        background-color: @white;
-        border: 0.3rem solid @black;
+
+      .skills-container {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        height: 50vh;
+
+        .s-skills-container {
+          .flex-start-even(column);
+          padding: 4.5rem 2rem;
+          background-color: @mainAccentColor;
+          color: @white;
+          border: 0.3rem dashed @black;
+          position: absolute;
+          z-index: 2;
+          left: 35%;
+          top: 30%;
+          width: 60%;
+          height: 80%;
+        }
+
+        .tech-container {
+          .flex-start-even(column);
+          padding: 4.5rem 2rem;
+          background-color: @white;
+          border: 0.3rem solid @black;
+          position: absolute;
+          width: 60%;
+          height: 80%;
+          top: 12%;
+          left: 10%;
+        }
+      }
+
+      @media (max-width: @mobileBreakpoint) {
+        li {
+          line-height: 1.5rem;
+        }
+        .skills-container {
+          position: static;
+          height: auto;
+          margin-top: 2rem;
+
+          .s-skills-container {
+            position: static;
+            width: 100%;
+            height: auto;
+            border-bottom: none;
+            padding: 2rem;
+          }
+          .tech-container {
+            position: static;
+            width: 100%;
+            height: auto;
+            padding: 2rem;
+          }
+        }
       }
     }
 
@@ -334,6 +390,10 @@ body {
           justify-content: center;
           padding: 1rem 3rem;
           width: 100%;
+
+          @media (max-width: @mobileBreakpoint) {
+            padding: 1rem;
+          }
         }
 
         div:last-child {
