@@ -197,21 +197,24 @@ body {
   h2,
   h3 {
     font-size: @subHeaderFontSize;
-    color: @white;
+    color: @black;
   }
 
   // Header
   header {
     margin: 2rem;
     text-align: center;
+    line-height: 1.5;
 
     h2 {
-      color: @black;
+      color: @accentColorGrey;
     }
   }
 
   // Nav
   nav {
+	position: sticky;
+	top: 0;
     .flex-center-even(row);
     margin-bottom: 1rem;
     width: 80%;
@@ -234,15 +237,14 @@ body {
 
   // Sections
   section {
-    padding: 2rem;
+	padding: 2rem;
+	margin-bottom: 2rem;
+
+    // Introduction
 
     &.intro {
-      background-color: @primaryColor;
-    }
-
-    &.skills {
       .flex-center-even(row);
-      width: 100%;
+      background-color: @primaryColor;
 
       img {
         border: 0.2rem solid @black;
@@ -251,6 +253,18 @@ body {
           display: none;
         }
       }
+    }
+
+    // Skills & Technologies
+
+    &.skills {
+      .flex-center-even(row);
+      width: 100%;
+
+      li {
+        list-style-type: disc;
+        line-height: 2rem;
+      }
 
       .skills-container {
         .flex-center-even(column);
@@ -258,17 +272,22 @@ body {
         background-color: @mainAccentColor;
         color: @white;
         border: 0.3rem dashed @black;
+        border-right: none;
 
         h2 {
           color: @white;
         }
+      }
 
-        li {
-          list-style-type: disc;
-          line-height: 2rem;
-        }
+      .tech-container {
+        .flex-center-even(column);
+        padding: 4.5rem 3rem;
+        background-color: @white;
+        border: 0.3rem solid @black;
       }
     }
+
+    // Work History
 
     &.work {
       background-color: @white;
@@ -297,17 +316,17 @@ body {
       }
     }
 
+    // Contact
+
     &.contact {
+      .flex-center-even(column);
       background-color: @primaryColor;
       margin-bottom: 2rem;
       width: 100%;
 
-      h2 {
-        color: @black;
-      }
-
       form {
         .flex-center-even(column);
+        width: 100%;
 
         div {
           display: flex;
@@ -323,7 +342,7 @@ body {
 
         input,
         textarea {
-          border: 0.1rem solid black;
+          border: 0.1rem solid @black;
           border-radius: 0.4rem;
           padding: 0.6rem;
         }
@@ -333,17 +352,23 @@ body {
         }
 
         textarea {
-          height: 300px;
+          height: 18rem;
         }
       }
 
       button {
-		background-color: @mainAccentColor;
-		padding: 0.6rem 1.4rem;
-		margin-bottom: 1rem;
-		text-decoration: none;
-		border: 0.1rem solid black;
-		border-radius: 0.5rem;
+        background-color: @white;
+        padding: 0.6rem 1.4rem;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        border: 0.1rem solid @black;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: @mainAccentColor;
+        }
       }
     }
   }
