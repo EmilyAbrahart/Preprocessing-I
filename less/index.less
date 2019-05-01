@@ -4,74 +4,260 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 // Colours
-@primaryColor:#EAE7dc;
-@mainAccentColor: #E85A4F;
-@accentColorBrown: #D8C3A5;
-@accentColorPink: #E98074;
-@accentColorGrey: #8E8D8A;
+@primaryColor: #eae7dc;
+@mainAccentColor: #e85a4f;
+@accentColorBrown: #d8c3a5;
+@accentColorPink: #e98074;
+@accentColorGrey: #8e8d8a;
+@white: white;
+@black: black;
 
 // Fonts
-@mainFont: 'Dosis', sans-serif;
-@accentFont: 'Crimson Text', serif;
+@mainFont: "Abel", sans-serif;
+@accentFont: "Libre Baskerville", serif;
+
+// Font Sizes
+@bodyFontSize: 1.5rem;
+@mainHeaderFontSize: 4rem;
+@subHeaderFontSize: 2rem;
 
 // Media Breakpoints
 @mobileBreakpoint: 500px;
 
 // Mixins
 
+.flex-center-even(@flexDirection) {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: @flexDirection;
+}
 
+.container {
+  // General Styling
+  .flex-center-even(column);
+  margin: 0 auto;
+  max-width: 1024px;
+  background-color: @white;
+  font-family: @mainFont;
+  font-size: @bodyFontSize;
 
+  h1,
+  h2,
+  h3 {
+    font-family: @accentFont;
+  }
+
+  h1 {
+    font-size: @mainHeaderFontSize;
+    color: @black;
+  }
+
+  h2,
+  h3 {
+    font-size: @subHeaderFontSize;
+    color: @white;
+  }
+
+  // Header
+  header {
+    margin: 2rem;
+    text-align: center;
+
+    h2 {
+      color: @black;
+    }
+  }
+
+  // Nav
+  nav {
+    .flex-center-even(row);
+    margin-bottom: 1rem;
+    width: 80%;
+    background-color: @mainAccentColor;
+
+    a {
+      text-decoration: none;
+      color: @white;
+      padding: 0.5rem;
+
+      &:hover {
+        color: @black;
+      }
+    }
+  }
+
+  // Sections
+  section {
+    padding: 2rem;
+
+    &.intro {
+      background-color: @primaryColor;
+    }
+
+    &.skills {
+      .flex-center-even(row);
+      width: 100%;
+
+      img {
+        border: 0.2rem solid @black;
+      }
+
+      .skills-container {
+        .flex-center-even(column);
+        padding: 4.5rem 3rem;
+        background-color: @mainAccentColor;
+        color: @white;
+        border: 0.3rem dashed @black;
+
+        h2 {
+          color: @white;
+        }
+        li {
+          list-style-type: disc;
+          line-height: 2rem;
+        }
+      }
+	}
+	
+	&.work{
+		background-color: @accentColorGrey;
+	}
+  }
+}

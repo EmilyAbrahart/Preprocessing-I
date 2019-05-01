@@ -6,7 +6,7 @@
 
     <title>Emily Abrahart</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Crimson+Text|Dosis"
+      href="https://fonts.googleapis.com/css?family=Abel|Libre+Baskerville"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/index.css" />
@@ -25,8 +25,8 @@
 
       <nav>
         <a href="#intro">Introduction</a>
-        <a href="#">Work History</a>
-        <a href="#">Contact</a>
+        <a href="#work">Work History</a>
+        <a href="#contact">Contact</a>
         <a href="https://emilyabrahart.github.io/portfolio">Portfolio</a>
       </nav>
 
@@ -45,47 +45,8 @@
         </p>
       </section>
 
-      <div class="work-skills-container">
-        <section class="work">
-          <h2>Work History</h2>
-          <table>
-            <tr class="table-header">
-              <th class="work-icon"></th>
-              <th>Company</th>
-              <th>Title</th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <th class="work-icon">BBGicon</th>
-              <th>Bloomberg</th>
-              <th>System Administrator</th>
-              <th>
-                Part of the System Administration team supporting ~20,000 global
-                employees of the finance, data and media company.
-              </th>
-            </tr>
-            <tr>
-              <th class="work-icon">KKRicon</th>
-              <th>KKR</th>
-              <th>Business Analyst</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th class="work-icon">KKRicon</th>
-              <th>KKR</th>
-              <th>System Administrator</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th class="work-icon">Mulberyicon</th>
-              <th>Mulberry</th>
-              <th>System Administrator</th>
-              <th></th>
-            </tr>
-          </table>
-        </section>
-
-        <section class="skills">
+      <section class="skills" id="skills">
+        <div class="skills-container">
           <h2>Skills</h2>
           <ul>
             <li>Attention to detail</li>
@@ -94,10 +55,52 @@
             <li>Analytical Thinking & Problem Solving</li>
             <li>Fast learning & Adaptation to New Technologies</li>
           </ul>
-        </section>
-      </div>
+        </div>
+        <img src="img/emily-abrahart.png" alt="Emily Abrahart" />
+      </section>
+
+      <section class="work" id="work">
+        <h2>Work History</h2>
+        <table>
+          <tr class="table-header">
+            <th class="work-icon"></th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <th class="work-icon">BBGicon</th>
+            <th>Bloomberg</th>
+            <th>System Administrator</th>
+            <th>
+              Part of the System Administration team supporting ~20,000 global
+              employees of the finance, data and media company.
+            </th>
+          </tr>
+          <tr>
+            <th class="work-icon">KKRicon</th>
+            <th>KKR</th>
+            <th>Business Analyst</th>
+            <th></th>
+          </tr>
+          <tr>
+            <th class="work-icon">KKRicon</th>
+            <th>KKR</th>
+            <th>System Administrator</th>
+            <th></th>
+          </tr>
+          <tr>
+            <th class="work-icon">Mulberyicon</th>
+            <th>Mulberry</th>
+            <th>System Administrator</th>
+            <th></th>
+          </tr>
+        </table>
+      </section>
+
       <div class="contact-container">
-        <section class="contact">
+        <section class="contact" id="contact">
+          <h2>Contact Me</h2>
           <form action="/my-handling-form-page" method="post">
             <div>
               <label for="name">Name:</label>
@@ -114,6 +117,7 @@
           </form>
         </section>
       </div>
+
       <footer>&copy; Emily Abrahart 2019</footer>
     </div>
   </body>
