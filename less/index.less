@@ -178,6 +178,11 @@ body {
   font-family: @mainFont;
   font-size: @bodyFontSize;
 
+  @media (max-width: @mobileBreakpoint) {
+    margin: 1rem;
+    font-size: 1rem;
+  }
+
   h1,
   h2,
   h3 {
@@ -212,6 +217,10 @@ body {
     width: 80%;
     background-color: @mainAccentColor;
 
+    @media (max-width: @mobileBreakpoint) {
+      width: 100%;
+    }
+
     a {
       text-decoration: none;
       color: @white;
@@ -237,6 +246,10 @@ body {
 
       img {
         border: 0.2rem solid @black;
+
+        @media (max-width: @mobileBreakpoint) {
+          display: none;
+        }
       }
 
       .skills-container {
@@ -249,15 +262,93 @@ body {
         h2 {
           color: @white;
         }
+
         li {
           list-style-type: disc;
           line-height: 2rem;
         }
       }
-	}
-	
-	&.work{
-		background-color: @accentColorGrey;
-	}
+    }
+
+    &.work {
+      background-color: @white;
+
+      h2 {
+        color: @mainAccentColor;
+      }
+
+      table {
+        padding: 1rem;
+        margin: 2rem 0;
+        border: 0.2rem solid @black;
+
+        tr {
+          background-color: @white;
+          padding: 1rem;
+
+          &:nth-child(1) {
+            font-weight: bold;
+          }
+
+          &:nth-child(even) {
+            background-color: @accentColorBrown;
+          }
+        }
+      }
+    }
+
+    &.contact {
+      background-color: @primaryColor;
+      margin-bottom: 2rem;
+      width: 100%;
+
+      h2 {
+        color: @black;
+      }
+
+      form {
+        .flex-center-even(column);
+
+        div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 1rem 3rem;
+          width: 100%;
+        }
+
+        div:last-child {
+          margin-bottom: 2.5rem;
+        }
+
+        input,
+        textarea {
+          border: 0.1rem solid black;
+          border-radius: 0.4rem;
+          padding: 0.6rem;
+        }
+
+        input {
+          width: 80%;
+        }
+
+        textarea {
+          height: 300px;
+        }
+      }
+
+      button {
+		background-color: @mainAccentColor;
+		padding: 0.6rem 1.4rem;
+		margin-bottom: 1rem;
+		text-decoration: none;
+		border: 0.1rem solid black;
+		border-radius: 0.5rem;
+      }
+    }
+  }
+
+  footer {
+    padding: 2rem;
   }
 }
