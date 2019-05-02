@@ -1,1 +1,393 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1024px;
+  background-color: white;
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 1rem;
+    font-size: 1rem;
+  }
+}
+.container h1,
+.container h2,
+.container h3 {
+  font-family: "Libre Baskerville", serif;
+}
+.container h1 {
+  font-size: 3.5rem;
+  color: black;
+}
+.container h2 {
+  font-size: 2rem;
+  color: black;
+}
+.container h3 {
+  font-size: 2rem -1rem;
+  text-decoration: underline;
+}
+.container hr {
+  width: 70%;
+  border-top: 0.1rem solid black;
+}
+.container header {
+  margin: 2rem;
+  text-align: center;
+  line-height: 1.5;
+}
+.container header h2 {
+  color: #8e8d8a;
+}
+.container nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  width: 80%;
+  background-color: #e85a4f;
+  z-index: 4;
+}
+@media (max-width: 500px) {
+  .container nav {
+    width: 100%;
+  }
+}
+.container nav a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+}
+.container nav a:hover {
+  color: black;
+}
+.container section {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.container section.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background-color: #eae7dc;
+}
+.container section.intro img {
+  border: 0.2rem solid black;
+}
+@media (max-width: 500px) {
+  .container section.intro img {
+    display: none;
+  }
+}
+.container section.skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+}
+.container section.skills ul {
+  width: 100%;
+}
+.container section.skills ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  line-height: 3rem;
+}
+.container section.skills .skills-container {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 50vh;
+}
+.container section.skills .skills-container .s-skills-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 4.5rem 2rem;
+  background-color: #e85a4f;
+  color: white;
+  border: 0.3rem dashed black;
+  position: absolute;
+  z-index: 2;
+  left: 35%;
+  top: 30%;
+  width: 60%;
+  height: 80%;
+}
+.container section.skills .skills-container .tech-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 4.5rem 2rem;
+  background-color: white;
+  border: 0.3rem solid black;
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  top: 12%;
+  left: 5%;
+}
+@media (max-width: 500px) {
+  .container section.skills li {
+    line-height: 1.5rem;
+  }
+  .container section.skills .skills-container {
+    position: static;
+    height: auto;
+    margin-top: 2rem;
+  }
+  .container section.skills .skills-container .s-skills-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-bottom: none;
+    padding: 2rem;
+  }
+  .container section.skills .skills-container .tech-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
+}
+.container section.work {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.container section.work .work-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+}
+.container section.work .work-item-container hr {
+  border-top: 0.07rem solid #e85a4f;
+}
+.container section.work .work-item-container .work-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.container section.work .work-item-container .work-item h3,
+.container section.work .work-item-container .work-item p {
+  line-height: 2rem;
+}
+.container section.work .work-item-container .work-item h3.job-title,
+.container section.work .work-item-container .work-item p.job-title {
+  font-weight: bold;
+}
+.container section.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-color: #eae7dc;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.container section.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+}
+.container section.contact form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 3rem;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .container section.contact form div {
+    padding: 1rem;
+  }
+}
+.container section.contact form div:last-child {
+  margin-bottom: 2.5rem;
+}
+.container section.contact form input,
+.container section.contact form textarea {
+  border: 0.1rem solid black;
+  border-radius: 0.4rem;
+  padding: 0.6rem;
+}
+.container section.contact form input {
+  width: 80%;
+}
+.container section.contact form textarea {
+  height: 18rem;
+}
+.container section.contact button {
+  background-color: white;
+  padding: 0.6rem 1.4rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  border: 0.1rem solid black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.container section.contact button:hover {
+  background-color: #e85a4f;
+}
+.container footer {
+  padding: 2rem;
+}

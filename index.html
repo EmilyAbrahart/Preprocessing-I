@@ -1,19 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>My Resume</title>
+    <title>Emily Abrahart</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel|Libre+Baskerville"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
 
-  <link rel="stylesheet" href="css/index.css">
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Emily Abrahart</h1>
+        <h2>Full Stack Web Developer</h2>
+      </header>
 
-<body>
-  <h1>My Resume</h1>
-</body>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work History</a>
+        <a href="#contact">Contact</a>
+        <a href="https://emilyabrahart.github.io/portfolio">Portfolio</a>
+      </nav>
+
+      <section class="intro" id="intro">
+        <div class="intro-text-container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            vero alias quae excepturi deserunt tempora. Perferendis ipsum esse
+            amet laborum, quasi quibusdam id modi repellat nobis aperiam dolore
+            repellendus similique?
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas,
+            nesciunt necessitatibus? Velit animi tenetur odit! Doloremque
+            assumenda quibusdam nisi, laudantium praesentium nulla. Sapiente
+            suscipit culpa quidem accusantium ea? Delectus, beatae!
+          </p>
+        </div>
+
+        <img src="img/emily-abrahart.png" alt="Emily Abrahart" />
+      </section>
+
+      <hr />
+
+      <section class="skills" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <div class="s-skills-container">
+            <ul>
+              <li>Attention to Detail</li>
+              <li>Project Management</li>
+              <li>Workload Prioritisation</li>
+              <li>Analytical Thinking & Problem Solving</li>
+              <li>Fast learning & Adaptation to New Technologies</li>
+            </ul>
+          </div>
+          <div class="tech-container">
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>React</li>
+              <li>Node.js</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="work" id="work">
+        <h2>Work History</h2>
+        <div class="work-item-container">
+          <div class="work-item">
+            <h3>Bloomberg</h3>
+            <p class="job-title">System Administrator</p>
+            <p>
+              Part of the Systems team supporting ~20,000 global employees of
+              the finance, data and media business.
+            </p>
+          </div>
+          <hr />
+          <div class="work-item">
+            <h3>KKR</h3>
+            <p class="job-title">Business Analyst</p>
+            <p>
+              Point of contact for EMEA users, supporting the asset manager's
+              proprietary applications and portfolio financial reporting.
+            </p>
+          </div>
+          <hr />
+          <div class="work-item">
+            <h3>KKR</h3>
+            <p class="job-title">System Administrator</p>
+            <p>
+              Part of the Technology team supporting the asset manager's EMEA
+              employees, technology infrastructure and events.
+            </p>
+          </div>
+          <hr />
+          <div class="work-item">
+            <h3>Mulberry</h3>
+            <p class="job-title">Systems Support</p>
+            <p>
+              Sole Systems professional supporting users at the fashion
+              designer's London offices and UK stores as well as events such as
+              London Fashion Week.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form action="/my-handling-form-page" method="post">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+          </div>
+          <div>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mail" name="user_mail" />
+          </div>
+          <div>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+          </div>
+        </form>
+
+        <a href="#"><button>Submit</button></a>
+      </section>
+
+      <footer>&copy; Emily Abrahart 2019</footer>
+    </div>
+  </body>
 </html>
